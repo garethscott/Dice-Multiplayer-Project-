@@ -1,10 +1,11 @@
 const rollButton = document.getElementById("button")
 const rollButtonTwo = document.getElementById("button-player2")
 
+const rollButText = document.getElementById("back-but-one")
+const rollButTextTwo = document.getElementById("back-but-two")
 
-const backButton = document.getElementById("button2")
-const backButtonTwo = document.getElementById("buttonTwo")
-
+const newBackButton = document.getElementById("new-back-button")
+const backButText = document.getElementById("new-back-but-text")
 
 const diceImg = document.getElementById("dice-img")
 const diceImgTwo = document.getElementById("dice-img-two")
@@ -17,14 +18,10 @@ const scoreHead = document.getElementById("score-heading")
 const scoreHeadTwo = document.getElementById("score-heading-two")
 
 
-const againButton = document.getElementById("again-button")
 
+// Player 1 
 
 let score = 0
-
-
-
-
 
 const rollDice = () => {
     mainHead.textContent = "No more Bets!"
@@ -34,10 +31,12 @@ const rollDice = () => {
     if (randomNum === 1) {
         mainHead.textContent = "You loose!"
         scoreHead.textContent = score
-        rollButton.style.display = "none"
-        backButton.style.display = "inline"
         mainHead.style.animationName = "flash-black"
         mainHead.style.animationPlayState = "running"
+        rollButText.style.color = "rgb(190, 190, 190)"
+        document.removeEventListener("keydown", keyRollOne, true)
+        newBackButton.style.visibility = "visible"
+
     }
     else if (score <= 20) {
         score += randomNum
@@ -46,32 +45,47 @@ const rollDice = () => {
     if (score > 20) {
         mainHead.textContent = "You've won!"
         scoreHead.textContent = score
-        rollButton.style.display = "none"
-        backButton.style.display = "inline"
-        backButton.style.background = "black"
         mainHead.style.animationPlayState = "running"
+        rollButText.style.color = "rgb(190, 190, 190)"
+        document.removeEventListener("keydown", keyRollOne, true)
+        newBackButton.style.visibility = "visible"
+
     }
 
 
 }
 
-rollButton.addEventListener('click', () => {
-    rollDice()
-});
-backButton.addEventListener('click', () => {
-    location.reload()
-});
+const keyRollOne = (a) => {
+    if (a.key === "a") {
+        rollDice()
+    }
+}
+
+
+
+document.addEventListener("keydown", keyRollOne, true)
+
+console.log()
+
+
+// document.addEventListener('keydown', (a) => {
+//     if (a.key === "a") {
+//         rollDice()
+//     }
+// });
 
 
 
 
 
+
+
+
+
+
+// Player 2
 
 let scoreTwo = 0
-
-
-
-
 
 const rollDicePlayer2 = () => {
     mainHeadTwo.textContent = "No more Bets!"
@@ -81,10 +95,12 @@ const rollDicePlayer2 = () => {
     if (randomNum === 1) {
         mainHeadTwo.textContent = "You loose!"
         scoreHeadTwo.textContent = scoreTwo
-        rollButtonTwo.style.display = "none"
-        backButtonTwo.style.display = "inline"
         mainHeadTwo.style.animationName = "flash-black"
         mainHeadTwo.style.animationPlayState = "running"
+        rollButTextTwo.style.color = "rgb(190, 190, 190)"
+        document.removeEventListener("keydown", keyRollTwo, true)
+        newBackButton.style.visibility = "visible"
+
     }
     else if (scoreTwo <= 20) {
         scoreTwo += randomNum
@@ -93,18 +109,54 @@ const rollDicePlayer2 = () => {
     if (scoreTwo > 20) {
         mainHeadTwo.textContent = "You've won!"
         scoreHeadTwo.textContent = scoreTwo
-        rollButtonTwo.style.display = "none"
-        backButtonTwo.style.display = "inline"
-        backButtonTwo.style.background = "black"
         mainHeadTwo.style.animationPlayState = "running"
+        rollButTextTwo.style.color = "rgb(190, 190, 190)"
+        document.removeEventListener("keydown", keyRollTwo, true)
+        newBackButton.style.visibility = "visible"
+
     }
-
-
 }
 
-rollButtonTwo.addEventListener('click', () => {
-    rollDicePlayer2()
-});
-backButtonTwo.addEventListener('click', () => {
+
+const keyRollTwo = (l) => {
+    if (l.key === "l") {
+        rollDicePlayer2()
+    }
+}
+
+document.addEventListener("keydown", keyRollTwo, true)
+
+
+// newBackButton.addEventListener('click', () => {
+//     location.reload()
+// });
+
+//let resultOne = rollDice()
+//let resultTwo = rollDicePlayer2()
+
+
+// console.log(rollDicePlayer2())
+
+
+
+// const oneVTwo = () => {
+//     if (resultOne > resultTwo) {
+
+//     }
+//     else if (resultTwo > resultOne) {
+
+//     }
+//     else if (resultOne === resultTwo) {
+
+//     }
+//     else if (resultTwo === resultOne) {
+
+//     }
+// }
+
+
+
+
+newBackButton.addEventListener('click', () => {
     location.reload()
 });
