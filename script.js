@@ -17,18 +17,27 @@ const mainHeadTwo = document.getElementById("roll-heading-two")
 const scoreHead = document.getElementById("score-heading")
 const scoreHeadTwo = document.getElementById("score-heading-two")
 
+let playerOneScore = 0
+let playerTwoScore = 0
+let finGameOne = false
+let finGameTwo = false
+let randomNumOne = 0
+let randomNumTwo = 0
 
 
-// Player 1 
+
+
+// Player 1 Function
 
 let score = 0
 
 const rollDice = () => {
     mainHead.textContent = "No more Bets!"
-    let randomNum = Math.floor(((Math.random() * 6) + 1))
-    diceImg.src = `assets/dice-${randomNum}.png`
+    randomNumOne = Math.floor(((Math.random() * 6) + 1))
+    diceImg.src = `assets/dice-${randomNumOne}.png`
 
-    if (randomNum === 1) {
+    if (randomNumOne === 1) {
+        score++
         mainHead.textContent = "You loose!"
         scoreHead.textContent = score
         mainHead.style.animationName = "flash-black"
@@ -36,10 +45,12 @@ const rollDice = () => {
         rollButText.style.color = "rgb(190, 190, 190)"
         document.removeEventListener("keydown", keyRollOne, true)
         newBackButton.style.visibility = "visible"
+        finGameOne = true
+
 
     }
     else if (score <= 20) {
-        score += randomNum
+        score += randomNumOne
         scoreHead.textContent = score
     }
     if (score > 20) {
@@ -49,50 +60,49 @@ const rollDice = () => {
         rollButText.style.color = "rgb(190, 190, 190)"
         document.removeEventListener("keydown", keyRollOne, true)
         newBackButton.style.visibility = "visible"
+        finGameOne = true
+
 
     }
 
-
-}
-
-const keyRollOne = (a) => {
-    if (a.key === "a") {
-        rollDice()
-    }
+    return score
 }
 
 
 
-document.addEventListener("keydown", keyRollOne, true)
 
-console.log()
+// Player One eventListenter and Function
 
-
-// document.addEventListener('keydown', (a) => {
-//     if (a.key === "a") {
-//         rollDice()
-//     }
-// });
+const keyRollOne = (event) => {
+    if (event.key === "a") {
+        let temp = rollDice()
+        playerOneScore = temp
 
 
+    }
+}
 
-
-
+document.addEventListener('keydown', keyRollOne, true)
 
 
 
 
 
-// Player 2
+
+
+
+
+// Player 2 Function
 
 let scoreTwo = 0
 
 const rollDicePlayer2 = () => {
     mainHeadTwo.textContent = "No more Bets!"
-    let randomNum = Math.floor(((Math.random() * 6) + 1))
-    diceImgTwo.src = `assets/dice-blue-${randomNum}.png`
+    randomNumTwo = Math.floor(((Math.random() * 6) + 1))
+    diceImgTwo.src = `assets/dice-blue-${randomNumTwo}.png`
 
-    if (randomNum === 1) {
+    if (randomNumTwo === 1) {
+        scoreTwo++
         mainHeadTwo.textContent = "You loose!"
         scoreHeadTwo.textContent = scoreTwo
         mainHeadTwo.style.animationName = "flash-black"
@@ -100,10 +110,12 @@ const rollDicePlayer2 = () => {
         rollButTextTwo.style.color = "rgb(190, 190, 190)"
         document.removeEventListener("keydown", keyRollTwo, true)
         newBackButton.style.visibility = "visible"
+        finGameTwo = true
+
 
     }
     else if (scoreTwo <= 20) {
-        scoreTwo += randomNum
+        scoreTwo += randomNumTwo
         scoreHeadTwo.textContent = scoreTwo
     }
     if (scoreTwo > 20) {
@@ -113,47 +125,98 @@ const rollDicePlayer2 = () => {
         rollButTextTwo.style.color = "rgb(190, 190, 190)"
         document.removeEventListener("keydown", keyRollTwo, true)
         newBackButton.style.visibility = "visible"
+        finGameTwo = true
 
     }
+
+
+    return scoreTwo
 }
 
 
-const keyRollTwo = (l) => {
-    if (l.key === "l") {
-        rollDicePlayer2()
+
+// Player One eventListenter and Function
+
+
+const keyRollTwo = (event) => {
+    if (event.key === "l") {
+        let temp = rollDicePlayer2()
+        playerTwoScore = temp
     }
 }
 
-document.addEventListener("keydown", keyRollTwo, true)
+document.addEventListener('keydown', keyRollTwo, true)
 
+// Resorted back to having two Eventlistner because I can't find away to turn one the events off when you have two functions
 
-// newBackButton.addEventListener('click', () => {
-//     location.reload()
-// });
-
-//let resultOne = rollDice()
-//let resultTwo = rollDicePlayer2()
-
-
-// console.log(rollDicePlayer2())
+// document.addEventListener('keydown', () => {
+//     keyRollTwo(event)
+//     keyRollOne(event)
+// }, true)
 
 
 
-// const oneVTwo = () => {
-//     if (resultOne > resultTwo) {
 
-//     }
-//     else if (resultTwo > resultOne) {
 
-//     }
-//     else if (resultOne === resultTwo) {
+const message = () => {
+    if (finGameOne === false && finGameTwo === false) {
+        console.log("hello")
+    }
+    else if (finGameOne === false || finGameTwo === true) {
+        console.log("not quite done waiting for game one")
+    }
+    else if (finGameOne === true || finGameTwo === false) {
+        console.log("not quite done waiting for two")
+    }
+    if (finGameOne === true && finGameTwo === true) {
+        console.log("fuck yeah")
+        clearInterval(timer)
+        oneVTwo(playerOneScore, playerTwoScore)
+    }
 
-//     }
-//     else if (resultTwo === resultOne) {
+}
 
-//     }
-// }
+//let timer = setInterval(message, 1000)
 
+
+
+
+// Player One 
+
+const oneVTwo = (scoreA, scoreB) => {
+    if (randomNumOne === 1) {
+        console.log("Player one lands on one you lose!")
+    }
+    else if (randomNumTwo === 1) {
+        console.log("Player one lands on one you lose!")
+    }
+    else if (randomNumOne === 1 && randomNumTwo === 1) {
+        console.log("OOOhh your both out!")
+    }
+    else if (scoreA > scoreB) {
+        console.log("Player 1 wines")
+    }
+    else if (scoreB > scoreA) {
+        console.log("Player 2 wins")
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//so whereever you call oneVTwo you need to pass in playerOneScore and playerTwoScore
+// oneVTwo(playerOneScore, playerTwoScore)
 
 
 
