@@ -20,6 +20,43 @@ body {
 .main-header {
     height: 305px;
     width: 1025px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.heading-box {
+    width: 1025px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    margin-top: -50px;
+}
+.main-heading {
+    color: white;
+    font-family: 'Bebas Neue';
+    font-size: 75px;
+    margin-top: 0px;
+    letter-spacing: 0.9;
+    border-bottom: 1px solid white;
+    height: 77px;
+    width: 756px;
+    text-align: center;
+}
+.sub-box {
+    width: 1025px;
+    height: 50px; 
+    display: flex;
+    justify-content: center;
+}
+.sub-heading {
+    height: 50px;
+    width: 400px;
+    color: white;
+    font-family: 'Bebas Neue';
+    font-size: 50px;
+    text-align: center;
+    margin-top: 0px;
 }
 .both-frames {
     width: 1025px;
@@ -197,4 +234,6 @@ a {
     left: 0px;
     display: none;
 }
+
+
 
