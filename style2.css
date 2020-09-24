@@ -1,0 +1,342 @@
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+}
+.wrapper-landscape-2player {
+    display: none;
+}
+.click {
+    display: none;
+}
+.welcome-heading-two {
+    display: none;
+    font-family: 'Bebas Neue';
+    color: rgb(255, 255, 255);
+    font-size: 38px;
+    line-height: 0.9em;
+    text-align: center;
+}
+.wrapper-portait-1player {
+    width: 100%;
+    height: 100vh;
+    background-image: url(./assets/craps-1.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    position: relative;
+}
+.dark-overlay {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 40%);
+}
+.welcome-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    position: absolute;
+    top: 0;
+}
+.welcome-heading {
+    width: 100%;
+    margin-top: 0px;
+    font-family: 'Bebas Neue';
+    color: rgb(255, 255, 255);
+    font-size: 38px;
+    line-height: 0.9em;
+    text-align: center;
+    padding-top: 16px;
+    padding-bottom: 5px;
+}
+.welcome-copy {
+    width: 280px;
+    font-size: 13px;
+    margin-top: -27px;
+    padding-top: 2px;
+    border-top: 1.5px solid rgb(255, 255, 255);
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+}
+.turn-mobile-message {
+    display: none;
+    width: 280px;
+    font-size: 13px;
+    margin-top: -27px;
+    padding-top: 2px;
+    border-top: 1.5px solid rgb(255, 255, 255);
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+}
+.frame {
+    width: 270px;
+    height: 350px;
+    margin-top: 150px;
+    background: rgb(94, 39, 39);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    border-radius: 20px;
+}
+.content {
+    width: 95%;
+    height: 96.5%;
+    background-image:url(assets/green.jpg);
+    border-radius: 17px;
+}
+.roll-heading {
+    font-family: 'Bebas Neue';
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: rgb(255, 255, 255);
+    animation-play-state: paused;
+    animation-name: flash;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes flash {
+    0% {
+     color: white;
+    }
+    10% {
+        color: yellow
+    }
+}
+
+@keyframes flash-black {
+    0% {
+     color: white;
+    }
+    10% {
+        color: rgb(7, 7, 7)
+    }
+}
+
+.player-heading {
+    font-family: 'Bebas Neue';
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: rgb(255, 255, 255);
+}
+.score-heading {
+    font-family: 'Bebas Neue';
+    font-size: 33px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+.head-join {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 20px;
+}
+.rolled {
+    margin-left: 3px;
+    margin-top: 17px;
+    font-style: italic;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+}
+.dice-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -7px;
+}
+.red-dice {
+    width: 55%;
+}
+.roll-button-box {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+.roll-button {
+    background: rgb(255, 255, 255);
+    width: 90px;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: visible;
+}
+.button-value {
+    font-family: 'Bebas Neue';
+    font-size: 15px;
+    color: black;
+
+}
+#new-back-button {
+    background-color: rgb(0, 0, 0);
+    width: 90px;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    position: relative;
+}
+.button-value-2 {
+    font-family: 'Bebas Neue';
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    position: absolute;
+    left: 16px;
+    bottom: -15px;
+}
+
+/* BIGGER MOBILE SCREENS IN PORTRAIT MODE */
+@media only screen and (min-width: 365px) and (max-width: 540px) and (min-height: 670px) and (max-height: 824px) {
+    .frame {
+        width: 350px;
+        height: 430px;
+        margin-top: 150px;
+    }
+    .content {
+        width: 95%;
+        height: 96.5%;
+        background-image:url(assets/green.jpg);
+        border-radius: 17px;
+    }
+    .welcome-heading {
+        width: 100%;
+        margin-top: 0px;
+        font-size: 49px;
+        line-height: 0.9em;
+        text-align: center;
+        padding-top: 16px;
+        padding-bottom: 0px;
+    }
+    .welcome-copy {
+        width: 353px;
+        font-size: 15px;
+        margin-top: -33px;
+        padding-top: 2px;
+        text-align: center;
+    }
+    .roll-heading {
+        font-size: 45px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+    .player-heading {
+        font-size: 20px;
+    }
+    .score-heading {
+        font-size: 45px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .head-join {
+        width: 100%;
+        height: 60px;
+        margin-left: 20px;
+    }
+    .rolled {
+        margin-left: 5px;
+        margin-top: 22px;
+        font-size: 20px;
+    }
+    .dice-img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+}
+
+/* MOBILES THAT DON'T HAVE ENOUGH HEIGHT TO PLAY THE GAME IN LANDSCAPE MODE */
+@media only screen and (min-width: 0px) and (max-width: 654px) and (min-height: 279px) and (max-height: 361px) {
+    .frame {
+        display: none;
+    }
+    .turn-mobile-message {
+        display: block;
+    }
+    .welcome-copy {
+        display: none;
+    } 
+    .welcome-box {
+        margin-top: 70px;
+    }
+}
+
+/* LANDSCAPE PLAY MODE FOR LARGER MOBILES */
+@media only screen and (min-width: 374px) and (max-width: 824px) and (min-height: 374px) and (max-height: 541px)  {
+   .dark-overlay {
+       flex-direction: row;
+       justify-content: flex-end;
+   }
+   .welcome-box {
+       position: static;
+   }
+   .frame {
+       margin-right: 30px;
+       margin-top: 0;
+   }
+   .welcome-box {
+       width: 200px;
+       height: 157px;
+       display: flex;
+       align-items: center;
+       flex-direction: column;
+       margin: 0;
+       background: red;
+       border-top: 2px solid rgb(255, 255, 255);
+    }
+    .welcome-heading {
+        display: none;
+    }
+    .welcome-heading-two {
+        display: inline-block;
+        font-family: 'Bebas Neue';
+        color: rgb(255, 255, 255);
+        font-size: 38px;
+        line-height: 0.9em;
+        text-align: right;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .welcome-copy {
+        width: 220px;
+        text-align: right;
+        border-top: none;
+        margin-top: -5px;
+    }
+}

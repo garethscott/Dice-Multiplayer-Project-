@@ -42,9 +42,11 @@ const rollDice = () => {
         scoreHead.textContent = score
         mainHead.style.animationName = "flash-black"
         mainHead.style.animationPlayState = "running"
-        rollButText.style.color = "rgb(190, 190, 190)"
-        document.removeEventListener("keydown", keyRollOne, true)
-        newBackButton.style.visibility = "visible"
+        // rollButText.style.color = "rgb(190, 190, 190)"
+        rollButton.removeEventListener("click", rollDice, true)
+        rollButton.style.display = "none"
+        newBackButton.style.display = "block"
+        newBackButton.style.background = "rgb(146, 4, 11"
         finGameOne = true
 
 
@@ -58,8 +60,9 @@ const rollDice = () => {
         scoreHead.textContent = score
         mainHead.style.animationPlayState = "running"
         rollButText.style.color = "rgb(190, 190, 190)"
-        document.removeEventListener("keydown", keyRollOne, true)
-        newBackButton.style.visibility = "visible"
+        rollButton.removeEventListener("click", rollDice, true)
+        rollButton.style.display = "none"
+        newBackButton.style.display = "block"
         finGameOne = true
 
 
@@ -73,16 +76,18 @@ const rollDice = () => {
 
 // Player One eventListenter and Function
 
-const keyRollOne = (event) => {
-    if (event.key === "a") {
-        let temp = rollDice()
-        playerOneScore = temp
+// const keyRollOne = (event) => {
+//     if (event.key === "a") {
+//         let temp = rollDice()
+//         playerOneScore = temp
 
 
-    }
-}
+//     }
+// }
 
-document.addEventListener('keydown', keyRollOne, true)
+// document.addEventListener('keydown', keyRollOne, true)
+
+rollButton.addEventListener('click', rollDice, true)
 
 
 

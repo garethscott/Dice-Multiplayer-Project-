@@ -6,19 +6,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dice Game</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue" />
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="style2.css">
 </head>
 
 <body>
-    <div class="wrapper">
 
-        <div class="main-header">
+
+    <div class="wrapper-portait-1player">
+        <div class="dark-overlay">
+
+            <div class="welcome-box">
+                <h1 class="welcome-heading">Welcome to the <br />Code Nation dice game</h1>
+                <h1 class="welcome-heading-two">Welcome to the<br /> Code Nation<br /> dice game</h1>
+                <h3 class="welcome-copy">Keep rolling the dice until you score of over 21! If you
+                    roll a 1 at anytime you loose, good luck!
+                </h3>
+                <h3 class="turn-mobile-message">For the best playing experiance, please turn your mobile device to
+                    portrait format. Thank you and good luck! </h3>
+            </div>
+
+
+
+            <div class="frame">
+                <div class="content">
+                    <div class="heading">
+                        <h1 id="roll-heading" class="roll-heading">Let's Roll Dice!</h1>
+                        <h5 id="player-heading" class="player-heading">Player 1</h5>
+                        <div class="head-join">
+                            <h3 id="score-heading" class="score-heading">0</h3>
+                            <h3 class="rolled">Rolled!</h3>
+                        </div>
+                    </div>
+                    <div class="dice-img">
+                        <img class="red-dice" id="dice-img" src="assets/dice-a.png" alt="The dice" />
+                    </div>
+                    <div class="roll-button-box">
+                        <div id="button" class="roll-button">
+                            <h5 id="back-but-one" class="button-value"><span class="click">Click</span>Press to roll
+                            </h5>
+                        </div>
+                        <div id="new-back-button" class="new-back-button">
+                            <h5 id="new-back-but-text" class="button-value-2">Play Again?</h5>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- LANDSCAPE BOX FOR TWO PLAYER -->
+    <div class="wrapper-landscape-2player">
+
+        <!-- <div class="main-header">
             <div class="heading-box">
                 <h1 class="main-heading">Feeling Lucky? Let's Roll Dice!</h1>
             </div>
             <div class="sub-box">
                 <h3 class="sub-heading">Place your bets!</h3>
             </div>
+        </div> -->
+        <div class="welcome-box">
+
+            <h1 class="welcome-heading">Welcome to the <br />Code Nation dice game</h1>
+            <h3 class="welcome-copy">For two player please hold your mobile device in landscape format, good luck!
+            </h3>
         </div>
 
 
@@ -87,7 +147,6 @@
 
         </div>
     </div>
-
 
     <script src="script.js"></script>
 </body>
