@@ -46,7 +46,7 @@ const rollDice = () => {
         rollButton.removeEventListener("click", rollDice, true)
         rollButton.style.display = "none"
         newBackButton.style.display = "block"
-        newBackButton.style.background = "rgb(146, 4, 11"
+        newBackButton.style.background = "rgb(146, 4, 11)"
         finGameOne = true
 
 
