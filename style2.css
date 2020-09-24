@@ -574,14 +574,18 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: lightgrey;
     }
     .dark-overlay {
         width: 1025px;
         height: 769px;
+        border-radius: 15px;
     }
     .wrapper-portait-1player {
         width: 1025px;
         height: 769px;
+        border-radius: 15px;
+        border: 2px solid black;
     }
     .frame {
         width: 370px;
